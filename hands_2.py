@@ -38,13 +38,13 @@ mp_hands = mp.solutions.hands
 
 # 3 different ways to read video file input ... uncomment and change accordingly
 # read video from file
-cap = cv2.VideoCapture('SIMPLE_VIDEO.mp4')
+#cap = cv2.VideoCapture('SIMPLE_VIDEO.mp4')
 
 # read from network
 #cap = cv2.VideoCapture('IP_HERE')
 
 # For webcam input:
-#cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 
 pref_width = 640
 pref_height = 480

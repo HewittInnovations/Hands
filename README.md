@@ -1,5 +1,5 @@
 # Finger detection within Google Mediapipe
-This code
+This code detects finger positions within video and outputs x,y,z coordinates to text file.
 
 # Installation
 The code is written in Python and uses Google Mediapipe and OpenCV library

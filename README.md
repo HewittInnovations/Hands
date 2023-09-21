@@ -13,7 +13,7 @@ https://developers.google.com/mediapipe/solutions/setup_python
 
 With proper libraries installed you can run code by double clicking in Windows or on commandline by
 
-py hands_2.py
+py hands.py
 
 # Output 
 

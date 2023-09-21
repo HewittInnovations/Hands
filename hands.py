@@ -61,8 +61,8 @@ mp_hands = mp.solutions.hands
 # For webcam input:
 cap = cv2.VideoCapture(0)
 
-pref_width = 640
-pref_height = 480
+pref_width = 1280
+pref_height = 720
 pref_fps = 30
 
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, pref_width)

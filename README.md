@@ -9,11 +9,40 @@ This link describes installation
 
 https://developers.google.com/mediapipe/solutions/setup_python
 
+
+Download and install Python (needs to be version 3.8 - 3.11)
+
+https://www.python.org/downloads/windows/
+
+Install Pip
+
+https://www.activestate.com/resources/quick-reads/how-to-install-pip-on-windows/
+
+On windows command line
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+
+python get-pip.py
+
+or
+
+py get-pip.py
+
+Install Mediapipe
+
+https://developers.google.com/mediapipe/solutions/setup_python
+
+python -m pip install mediapipe
+
+or
+
+py -m pip install mediapipe
+
 # Running
 
 With proper libraries installed you can run code by double clicking in Windows or on commandline by
 
-py hands.py
+py hands_2.py
 
 # Output 
 
@@ -39,3 +68,7 @@ reach out to chadhewitt@gmail.com
 https://github.com/google/mediapipe/blob/master/docs/solutions/hands.md
 
 ![alt text](https://camo.githubusercontent.com/b0f077393b25552492ef5dd7cd9fd13f386e8bb480fa4ed94ce42ede812066a1/68747470733a2f2f6d65646961706970652e6465762f696d616765732f6d6f62696c652f68616e645f6c616e646d61726b732e706e67)
+
+https://github.com/google/mediapipe/blob/master/docs/solutions/holistic.md
+
+![alt text](https://developers.google.com/static/mediapipe/images/solutions/pose_landmarks_index.png)

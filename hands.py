@@ -9,7 +9,6 @@
 
 #Good write-up
 #https://github.com/google/mediapipe/blob/master/docs/solutions/hands.md
-
 import cv2
 import mediapipe as mp
 from datetime import datetime
@@ -53,17 +52,17 @@ mp_hands = mp.solutions.hands
 
 # 3 different ways to read video file input ... uncomment and change accordingly
 # read video from file
-#cap = cv2.VideoCapture('SIMPLE_VIDEO.mp4')
+cap = cv2.VideoCapture('SIMPLE_VIDEO.mp4')
 
 # read from network
 #cap = cv2.VideoCapture('IP_HERE')
 
 # For webcam input:
-cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture(0)
 
 pref_width = 1280
 pref_height = 720
-pref_fps = 30
+pref_fps = 60
 
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, pref_width)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, pref_height)
@@ -112,6 +111,7 @@ with mp_hands.Hands(
     # Draw the hand annotations on the image.
     image.flags.writeable = True
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    
     if results.multi_hand_landmarks:
       for hand_landmarks in results.multi_hand_landmarks:
       

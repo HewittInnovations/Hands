@@ -52,13 +52,13 @@ mp_hands = mp.solutions.hands
 
 # 3 different ways to read video file input ... uncomment and change accordingly
 # read video from file
-cap = cv2.VideoCapture('SIMPLE_VIDEO.mp4')
+#cap = cv2.VideoCapture('SIMPLE_VIDEO.mp4')
 
 # read from network
 #cap = cv2.VideoCapture('IP_HERE')
 
 # For webcam input:
-#cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(0)
 
 pref_width = 1280
 pref_height = 720
@@ -113,7 +113,7 @@ with mp_hands.Hands(
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
     
     if results.multi_hand_landmarks:
-      for hand_landmarks in results.multi_hand_landmarks:
+      for hand_landmarks, handedness in zip(results.multi_hand_landmarks, results.multi_handedness):      
       
         h, w, c = image.shape
         landmarks = hand_landmarks.landmark
@@ -123,8 +123,8 @@ with mp_hands.Hands(
         
         #Write all variables and X,Y,Z coordinates to file separated by delimeter variable
         for i in range(len(hand_str)):
-            f.write(hand_str[i] + delimeter + "X" + delimeter + str(landmarks[i].x) + delimeter + 
-                    "Y" + delimeter + str(landmarks[i].y) + delimeter + "Z" + delimeter + str(landmarks[i].z) + "\n")
+            f.write(handedness.classification[0].label[0:] + " hand " + hand_str[i] + delimeter + "X" + delimeter + 
+                    str(landmarks[i].x) + delimeter + "Y" + delimeter + str(landmarks[i].y) + delimeter + "Z" + delimeter + str(landmarks[i].z) + "\n")
                     
         mp_drawing.draw_landmarks(
             image,

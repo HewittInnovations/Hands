@@ -176,8 +176,8 @@ with mp_holistic.Holistic(
         
         #Write all variables and X,Y,Z coordinates to file separated by delimeter variable
         for i in range(len(hand_str)):
-            f.write(pose_str[i] + delimeter + "X" + delimeter + str(landmarks[i].x) + delimeter + 
-                    "Y" + delimeter + str(landmarks[i].y) + delimeter + "Z" + delimeter + str(landmarks[i].z) + "\n")        
+            f.write(pose_str[i] + delimeter + "X" + delimeter + f"{landmarks[i].x:.9f}" + delimeter + 
+                    "Y" + delimeter + f"{landmarks[i].y:.9f}" + delimeter + "Z" + delimeter + f"{landmarks[i].z:.9f}"+ "\n")        
         
         mp_drawing.draw_landmarks(
             image,
@@ -197,8 +197,8 @@ with mp_holistic.Holistic(
         
         #Write all variables and X,Y,Z coordinates to file separated by delimeter variable
         for i in range(len(hand_str)):
-            f.write("LEFT_HAND" + delimeter + hand_str[i] + delimeter + "X" + delimeter + str(landmarks[i].x) + delimeter + 
-                    "Y" + delimeter + str(landmarks[i].y) + delimeter + "Z" + delimeter + str(landmarks[i].z) + "\n")
+            f.write("LEFT_HAND " + hand_str[i] + delimeter + "X" + delimeter + f"{landmarks[i].x:.9f}" + delimeter + 
+                    "Y" + delimeter + f"{landmarks[i].y:.9f}" + delimeter + "Z" + delimeter + f"{landmarks[i].z:.9f}" + "\n")
                     
         mp_drawing.draw_landmarks(
             image,
@@ -216,8 +216,8 @@ with mp_holistic.Holistic(
         
         #Write all variables and X,Y,Z coordinates to file separated by delimeter variable
         for i in range(len(hand_str)):
-            f.write("RIGHT_HAND" + delimeter + hand_str[i] + delimeter + "X" + delimeter + str(landmarks[i].x) + delimeter + 
-                    "Y" + delimeter + str(landmarks[i].y) + delimeter + "Z" + delimeter + str(landmarks[i].z) + "\n")
+            f.write("RIGHT_HAND " + hand_str[i] + delimeter + "X" + delimeter + f"{landmarks[i].x:.9f}" + delimeter + 
+                    "Y" + delimeter + f"{landmarks[i].y:.9f}" + delimeter + "Z" + delimeter + f"{landmarks[i].z:.9f}" + "\n")
     
         mp_drawing.draw_landmarks(
             image,

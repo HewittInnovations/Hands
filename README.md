@@ -32,11 +32,11 @@ Install Mediapipe
 
 https://developers.google.com/mediapipe/solutions/setup_python
 
-python -m pip install mediapipe
+python -m pip install requirements.txt
 
 or
 
-py -m pip install mediapipe
+py -m pip install requirements.txt
 
 # Running
 

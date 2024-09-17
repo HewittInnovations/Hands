@@ -151,7 +151,7 @@ for x in filelines:
             left_max_time = frametime
 
         #plot time and angle
-        ax[0].scatter(frametime,left_angle)
+        ax[0].plot(frametime,left_angle, '-o')
 
         framediff = frametime - left_last_time;
            

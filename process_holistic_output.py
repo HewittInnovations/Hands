@@ -4,7 +4,7 @@ import math
 
 
 #open file and read into list
-f = open('BrownLion67.txt', 'r')
+f = open('holistic_output.txt', 'r')
 filelines = f.readlines()
 #print(filelines)
 
@@ -81,7 +81,7 @@ for x in filelines:
     # Frame Time
     if "frame" in x:
         #print(x)
-        timestr = x.split(' ')[2]
+        timestr = x.split(',')[1]
         #print(timestr)
         frametime = datetime.strptime(timestr, "%H:%M:%S-%f ")
         #print('time:', t1.time())
@@ -101,29 +101,29 @@ for x in filelines:
     # Left Hand
     #parse this         
     #LEFT_HAND,WRIST,X,0.5899660587310791,Y,0.6407750248908997,Z,1.733735928155511e-07
-    if "LEFT_HAND,WRIST" in x:
+    if "LEFT_HAND WRIST" in x:
         #print(x)
         split_x = x.split(',')
         #print(split_x)
-        left_wrist_x = float(split_x[3])
-        left_wrist_y = float(split_x[5])
-        left_wrist_z = float(split_x[7])
+        left_wrist_x = float(split_x[2])
+        left_wrist_y = float(split_x[4])
+        left_wrist_z = float(split_x[6])
         #print(wrist_x,wrist_y,wrist_z)
-    if "LEFT_HAND,THUMBS_TIP" in x:
+    if "LEFT_HAND THUMBS_TIP" in x:
         #print(x)
         split_x = x.split(',')
         #print(split_x)
-        left_thumb_x = float(split_x[3])
-        left_thumb_y = float(split_x[5])
-        left_thumb_z = float(split_x[7])
+        left_thumb_x = float(split_x[2])
+        left_thumb_y = float(split_x[4])
+        left_thumb_z = float(split_x[6])
         #print(thumb_x,thumb_y,thumb_z)
-    if "LEFT_HAND,INDEX_FINGER_TIP" in x:
+    if "LEFT_HAND INDEX_FINGER_TIP" in x:
         #print(x)
         split_x = x.split(',')
         #print(split_x)
-        left_index_x = float(split_x[3])
-        left_index_y = float(split_x[5])
-        left_index_z = float(split_x[7])
+        left_index_x = float(split_x[2])
+        left_index_y = float(split_x[4])
+        left_index_z = float(split_x[6])
         #print(index_x,index_y,index_z)
         
         #index finger is last variable ... process data
@@ -151,7 +151,7 @@ for x in filelines:
             left_max_time = frametime
 
         #plot time and angle
-        ax[0].plot(frametime,left_angle, '-o')
+        ax[0].plot(frametime,left_angle, '.b-')
 
         framediff = frametime - left_last_time;
            
@@ -194,29 +194,29 @@ for x in filelines:
     # Right Hand
     #parse this         
     #RIGHT_HAND,WRIST,X,0.5899660587310791,Y,0.6407750248908997,Z,1.733735928155511e-07
-    if "RIGHT_HAND,WRIST" in x:
+    if "RIGHT_HAND WRIST" in x:
         #print(x)
         split_x = x.split(',')
         #print(split_x)
-        right_wrist_x = float(split_x[3])
-        right_wrist_y = float(split_x[5])
-        right_wrist_z = float(split_x[7])
+        right_wrist_x = float(split_x[2])
+        right_wrist_y = float(split_x[4])
+        right_wrist_z = float(split_x[6])
         #print(wrist_x,wrist_y,wrist_z)
-    if "RIGHT_HAND,THUMBS_TIP" in x:
+    if "RIGHT_HAND THUMBS_TIP" in x:
         #print(x)
         split_x = x.split(',')
         #print(split_x)
-        right_thumb_x = float(split_x[3])
-        right_thumb_y = float(split_x[5])
-        right_thumb_z = float(split_x[7])
+        right_thumb_x = float(split_x[2])
+        right_thumb_y = float(split_x[4])
+        right_thumb_z = float(split_x[6])
         #print(thumb_x,thumb_y,thumb_z)
-    if "RIGHT_HAND,INDEX_FINGER_TIP" in x:
+    if "RIGHT_HAND INDEX_FINGER_TIP" in x:
         #print(x)
         split_x = x.split(',')
         #print(split_x)
-        right_index_x = float(split_x[3])
-        right_index_y = float(split_x[5])
-        right_index_z = float(split_x[7])
+        right_index_x = float(split_x[2])
+        right_index_y = float(split_x[4])
+        right_index_z = float(split_x[6])
         #print(index_x,index_y,index_z)
         
         #index finger is last variable ... process data
@@ -244,7 +244,7 @@ for x in filelines:
             right_max_time = frametime
 
         #plot time and angle
-        ax[1].scatter(frametime,right_angle)
+        ax[1].plot(frametime,right_angle, '.g-')
 
         framediff = frametime - right_last_time
             

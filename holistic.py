@@ -139,7 +139,8 @@ with mp_holistic.Holistic(
 
     now = datetime.now()
     frame = frame + 1
-    f.write("frame " + str(frame) + " " + now.strftime("%H:%M:%S-%f") + "\n")
+    #change to comma delimeter and update process_holistic_output.py
+    f.write("frame " + str(frame) + "," + now.strftime("%H:%M:%S-%f") + "\n")
     
     # To improve performance, optionally mark the image as not writeable to
     # pass by reference.
